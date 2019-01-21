@@ -1,22 +1,40 @@
 <?php
 require('conexion.php');
 
-$nombre = $_POST["nombre"];
-$rfc = $_POST["rfc"];
 $razon_social = $_POST["razon_social"];
 $logotipo = $_POST["logotipo"];
 $giro = $_POST["giro"];
+$rfc = $_POST["rfc"];
 $titular = $_POST["titular"];
 $puesto = $_POST["puesto"];
-$direccion = $_POST["direccion"];
+$estado = $_POST["estado"];
+$colonia = $_POST["colonia"];
+$calle = $_POST["calle"];
+$numero = $_POST["numero"];
+$codigo_postal = $_POST["codigo_postal"];
 $telefono = $_POST["telefono"];
 $correo = $_POST["correo"];
 $pagina_web = $_POST["pagina_web"];
 $convenio = $_POST["convenio"];
 
-$insertar ="INSERT INTO empresa(nombre,rfc,razon_social,logotipo,giro,titular,puesto,direccion,telefono,correo,pagina_web,convenio) values ('$nombre', '$rfc','$razon_social','$logotipo','$giro','$titular','$puesto','$direccion','$telefono','$correo','$pagina_web','$convenio')";
+$insertar ="INSERT INTO empresa(razon_social,logotipo,giro,rfc,titular,puesto,estado,colonia,calle,numero,codigo_postal,telefono,correo,pagina_web,convenio,clave) values ('$razon_social','$logotipo','$giro','$rfc','$titular','$puesto','$estado','$colonia','$calle','$numero','$codigo_postal','$telefono','$correo','$pagina_web','$convenio','$razon_social')";
+
+
 
 $resultado = mysqli_query($conexion1, $insertar);
+
+
+// Datos para el correo
+//$destinatario = $correo;
+//$asunto = "Claves de acceso";
+
+//$carta = "Usuario $nombre \n";
+//$carta .= "Clave: $nombre \n";
+
+
+// Enviando Mensaje
+//mail($destinatario, $asunto, $carta);
+
 ?>
 
 <!DOCTYPE HTML>
@@ -35,15 +53,24 @@ $resultado = mysqli_query($conexion1, $insertar);
 	<body>
 
 <header>
-<img class="logoMex" src="imagenes/TECNACMEX.png"width="300" height="100" align="letf">	
-	<img class="logoSEP" src="imagenes/SEP.png"width="300" height="100" align="right">
-	<div class="row encabezado text-center">
-	<img class="logoIto" src="imagenes/imagenlogo.png"width="100" height="100">	
-<div class="col.lg-1 col-lg-offset-2">
-	<h3>TECNOLOGICO NACIONAL DE MEXICO</h3>
-	<h4>Intituto Tecnologico de Oaxaca</h4>
-</div>
+  <div id="sfcwhfazg5pp5cscswpm1m9uxxmsfbb5abb"></div>
+                <script type="text/javascript" src="https://counter5.wheredoyoucomefrom.ovh/private/counter.js?c=whfazg5pp5cscswpm1m9uxxmsfbb5abb&down=async" async></script><br><noscript><a href="https://www.contadorvisitasgratis.com" title="contador de entradas"><img src="https://counter5.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=whfazg5pp5cscswpm1m9uxxmsfbb5abb" border="0" title="contador de entradas" alt="contador de entradas"></a></noscript>
 
+  <div class="row">
+                <div class="col-lg-4 ">
+                <img class="logoMex" src="imagenes/TECNACMEX.png"width="250" height="100" align="letf">     
+                </div>
+                <div class="col-lg-4 text-center" >
+                  <img class="logoITO" src="imagenes/imagenlogo.png" width="100" height="100">
+                    <p class="encabezado text-center">
+                        </p><h3>Tecnológico Nacional de México </h3>
+                        <h4>Instituto Tecnológico de Oaxaca </h4>
+                    <p></p>
+                </div>
+            <div class="col-lg-4">
+                    <img class="logoSEP" src="imagenes/SEP.png"width="250" height="100">
+                </div>
+            </div>
 <div class="menus">
 				<a href="#" class="bt-menu"><span class="icon-list2"></span>Menu</a>
 			</div>
@@ -52,6 +79,9 @@ $resultado = mysqli_query($conexion1, $insertar);
 					<li class="submenu">
 						<a href="#" ><span class="icon-user"></span>REGISTRO DE EMPRESA<span class="caret icon-circle-down"></span></a>
 						
+					</li>
+							<li class="submenu">
+						<a href="inicio.php" ><span class="icon-user"></span>Menu<span class="caret icon-circle-down"></span></a>
 					</li>
 	
 		</ul>
@@ -63,24 +93,10 @@ $resultado = mysqli_query($conexion1, $insertar);
 	
 
 <div class="panel-body" align="center">
-	<form role="form" enctype="multipart/form-data" class="form-horizontal" method="POST" autocomplete="off">
+	<form action="registroEmpresa.php" role="form" enctype="multipart/form-data" class="form-horizontal" method="POST" autocomplete="off">
 		<div class="form-group">
 <table class="egt">
-	<tr>
-		<td><label class="control-label col-sm-4">NOMBRE: </label></td>
-		<td>
-			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="nombre" required>
-			</div></td>
-		</tr>
-	<tr>
-		<td><label class="control-label col-sm-4">RFC </label></td>
-		<td>
-			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="rfc" required>
-			</div></td>
-		</tr>
-	<tr>
+		<tr>
 		<td><label class="control-label col-sm-4">RAZON SOCIAL: </label></td>
 		<td>
 			<div class="col-sm-6">
@@ -88,7 +104,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 			</div></td>
 		</tr>
 
-		<tr>
+				<tr>
 		<td><label class="control-label col-sm-4">LOGOTIPO OFICIAL: </label></td>
 		<td>
 			<div class="col-sm-6">
@@ -104,11 +120,19 @@ $resultado = mysqli_query($conexion1, $insertar);
 			</div></td>
 		</tr>
 
+	<tr>
+		<td><label class="control-label col-sm-4">RFC </label></td>
+		<td>
+			<div class="col-sm-6">
+				<input value class="form-control" type="text" name="rfc" required>
+			</div></td>
+		</tr>
+
 			<tr>
 		<td><label class="control-label col-sm-4">TITULAR DE LA ORGANIZACION: </label></td>
 		<td>
 			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="titular" required>
+				<input value class="form-control" type="text" name="titular" placeholder="Lic./Ing. Nombre completo" required>
 			</div></td>
 		</tr>
 
@@ -116,17 +140,55 @@ $resultado = mysqli_query($conexion1, $insertar);
 		<td><label class="control-label col-sm-4">PUESTO DEL TITULAR: </label></td>
 		<td>
 			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="puesto" required>
+				<input value class="form-control" type="text" name="puesto" placeholder="Cargo que ocupa" equired>
 			</div></td>
 		</tr>
 
 			<tr>
-		<td><label class="control-label col-sm-4">DOMICILIO: </label></td>
+		<td><label class="control-label col-sm-4">DOMICILIO PARTICULAR: </label></td>
 		<td>
 			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="direccion" required>
+                 <select class="form-control" name="estado">
+                 	<option>AGUASCALIENTES</option>
+    <option>BCN</option>
+    <option>BAJA CALIFORNIA SUR</option>
+    <option>CAMPECHE</option>
+    <option>COAHUILA</option>
+    <option>COLIMA</option>
+    <option>CHIAPAS</option>
+    <option>CHIHUAHUA</option>
+    <option>DISTRITO FEDERAL</option>
+    <option>DURANGO</option>
+    <option>GUANAJUATO</option>
+    <option>GUERRERO</option>
+    <option>HIDALGO</option>
+    <option>JALISCO</option>
+    <option>MEXICO</option>
+    <option>MICHOACAN</option>
+    <option>MORELOS</option>
+    <option>NAYARIT</option>
+    <option>NUEVO LEON</option>
+    <option>OAXACA</option>
+    <option>PUEBLA</option>
+    <option>QUERETARO</option>
+    <option>QUINTANA ROO</option>
+    <option>SAN LUIS POTOSI</option>
+    <option>SINALOA</option>
+    <option>SONORA</option>
+    <option>TABASCO</option>
+    <option>TAMAULIPAS</option>
+    <option>TLAXCALA</option>
+    <option>VERACRUZ</option>
+    <option>YUCATAN</option>
+    <option>ZACATECAS</option>
+    </select>
+				<input value class="form-control" type="text" name="colonia" placeholder="nombre de colonia" required>
+				<input value class="form-control" type="text" name="calle" placeholder=" nombre de calle" required>
+				<input value class="form-control" type="text" name="numero" placeholder="numero de casa" required>
+				<input value class="form-control" type="text" name="codigo_postal" placeholder="CP" required>
 			</div></td>
 		</tr>
+
 
 			<tr>
 		<td><label class="control-label col-sm-4">TELEFONO: </label></td>

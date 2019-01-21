@@ -24,21 +24,28 @@ $conexion1=mysqli_connect("$host","$usuario","$password","$nombre_base");
 
 	</head>
 	<body>
-
-
-
-
-
-	
 <header>
-<img class="logoMex" src="imagenes/TECNACMEX.png"width="300" height="100" align="letf">	
-	<img class="logoSEP" src="imagenes/SEP.png"width="300" height="100" align="right">
-	<div class="row encabezado text-center">
-	<img class="logoIto" src="imagenes/imagenlogo.png"width="100" height="100">	
-<div class="col.lg-1 col-lg-offset-2">
-	<h3>TECNOLOGICO NACIONAL DE MEXICO</h3>
-	<h4>Intituto Tecnologico de Oaxaca</h4>
-</div>			<nav>
+  <div id="sfcwhfazg5pp5cscswpm1m9uxxmsfbb5abb"></div>
+                <script type="text/javascript" src="https://counter5.wheredoyoucomefrom.ovh/private/counter.js?c=whfazg5pp5cscswpm1m9uxxmsfbb5abb&down=async" async></script><br><noscript><a href="https://www.contadorvisitasgratis.com" title="contador de entradas"><img src="https://counter5.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=whfazg5pp5cscswpm1m9uxxmsfbb5abb" border="0" title="contador de entradas" alt="contador de entradas"></a></noscript>
+
+  <div class="row">
+                <div class="col-lg-4 ">
+                <img class="logoMex" src="imagenes/TECNACMEX.png"width="250" height="100" align="letf">     
+                </div>
+                <div class="col-lg-4 text-center" >
+                  <img class="logoITO" src="imagenes/imagenlogo.png" width="100" height="100">
+                    <p class="encabezado text-center">
+                        </p><h3>Tecnológico Nacional de México </h3>
+                        <h4>Instituto Tecnológico de Oaxaca </h4>
+                    <p></p>
+                </div>
+            <div class="col-lg-4">
+                    <img class="logoSEP" src="imagenes/SEP.png"width="250" height="100">
+                </div>
+            </div>
+
+
+			<nav>
 				<ul>
 					<li class="submenu">
 						<a href="#" ><span class="icon-user"></span>Egresado<span class="caret icon-circle-down"></span></a>
@@ -54,7 +61,7 @@ $conexion1=mysqli_connect("$host","$usuario","$password","$nombre_base");
 			<form name="loginform" id="loginform" action="validadEgresado.php" method="POST" class="cuerpo" >
 			<p>
 			 <label for="user_login">Nombre De Usuario<br />
-			 <input type="text" name="nombre_acceso" id="nombre_acceso" class="input" placeholder="&#128100; Id" value="" size="20" /></label>
+			 <input type="text" name="nombre_egresado" id="nombre_egresado" class="input" placeholder="&#128100; Id" value="" size="20" /></label>
 			 </p>
 			 <p>
 			 <label for="user_pass">Contraseña<br />

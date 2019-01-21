@@ -1,16 +1,5 @@
 <?php
 require('conexion.php');
-
-$trabajo = $_POST["trabajo"];
-$aptitud = $_POST["aptitud"];
-$resumen = $_POST["resumen"];
-$exito_profecional = $_POST["exito_profecional"];
-
-$insertar ="INSERT INTO curriculum(trabajo,aptitud,resumen,exito_profecional) values ('$trabajo', '$aptitud','$resumen','$exito_profecional')";
-
-//$consultar =" INTO egresado()"
-
-$resultado = mysqli_query($conexion1, $insertar);
 ?>
 
 <!DOCTYPE>
@@ -47,13 +36,19 @@ $resultado = mysqli_query($conexion1, $insertar);
 		</ul>
 	</nav>
 	</header>
+
+		<div class="panel-body" align="center">
+	<form role="form" enctype="multipart/form-data" action="modificar.php" class="form-horizontal" method="POST" autocomplete="off">
+		<div class="form-group">
+
+
 		<li>DATOS PERSONALES</li>
 	<table class="egt">
 		<tr>
 			<td><label class="control-label col-sm-4">NOMBRE: </label></td>
 			<td>
 				<div class="col-sm-6">
-					<input value class="form-control" type="text" name="nombre" required>
+					<input value class="form-control" type="text" name="nombre_egresado" required>
 				</div>
 			</td>
 		</tr>
@@ -62,7 +57,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 			<td><label class="control-label col-sm-4">CARRERA: </label></td>
 			<td>
 				<div class="col-sm-6">
-					<input value class="form-control" type="text" name="carrera" required>
+					<input value class="form-control" type="text" name="carrera" >
 				</div>
 			</td>
 		</tr>
@@ -71,7 +66,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 			<td><label class="control-label col-sm-4">GENERACION: </label></td>
 			<td>
 				<div class="col-sm-6">
-					<input value class="form-control" type="text" name="generacion" required>
+					<input value class="form-control" type="text" name="generacion" >
 				</div>
 			</td>
 		</tr>
@@ -80,7 +75,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 		<td><label class="control-label col-sm-4">DOMICILIO PARTICULAR: </label></td>
 		<td>
 			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="domicilio" required>
+				<input value class="form-control" type="text" name="domicilio" >
 			</div></td>
 		</tr>
 
@@ -88,7 +83,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 		<td><label class="control-label col-sm-4">TELEFONO: </label></td>
 		<td>
 			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="telefono" required>
+				<input value class="form-control" type="text" name="telefono" >
 			</div></td>
 		</tr>
 
@@ -96,7 +91,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 		<td><label class="control-label col-sm-4">EMAIL: </label></td>
 		<td>
 			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="correo" required>
+				<input value class="form-control" type="text" name="correo" >
 			</div></td>
 		</tr>
 
@@ -121,9 +116,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 
 	<li>DATOS LABORALES</li>
 
-<div class="panel-body" align="center">
-	<form role="form" enctype="multipart/form-data" class="form-horizontal" method="POST" autocomplete="off">
-		<div class="form-group">
+
 
 <table>
 
@@ -131,7 +124,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 			<td><label class="control-label col-sm-4">TRABAJOS DONDE HAS LABORADO </label></td>
 			<td>
 				<div class="col-sm-6">
-				    <textarea value class="form-control" name="trabajo" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
+				    <textarea value class="form-control" name="trabajo" rows="10" cols="100"></textarea>
 				</div>
 			</td>
 		</tr>
@@ -139,7 +132,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 			<td><label class="control-label col-sm-4">aptitudes generales </label></td>
 			<td>
 				<div class="col-sm-6">
-					<textarea value class="form-control" name="aptitud" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
+					<textarea value class="form-control" name="aptitud" rows="10" cols="100"></textarea>
 				</div>
 			</td>
 		</tr>
@@ -148,16 +141,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 			<td><label class="control-label col-sm-4">RESUMEN PROFECIONAL </label></td>
 			<td>
 				<div class="col-sm-6">
-				<textarea value class="form-control" name="resumen" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
-				</div>
-			</td>
-		</tr>
-
-		<tr>
-			<td><label class="control-label col-sm-4">EXITOS PROFECIONALES </label></td>
-			<td>
-				<div class="col-sm-6">
-					<textarea value class="form-control" name="exito_profecional" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
+				<textarea value class="form-control" name="resumen_profecional" rows="10" cols="100"></textarea>
 				</div>
 			</td>
 		</tr>

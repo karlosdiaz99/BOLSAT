@@ -1,6 +1,12 @@
 <?php
 require('conexion.php');
 
+$razon_social = $_REQUIRED["razon_social"];
+$giro = $_REQUIRED["giro"];
+$estado = $_REQUIRED["estado"];
+$telefono = $_REQUIRED["telefono"];
+$correo = $_REQUIRED["correo"];
+
 $requerimiento = $_POST["requerimiento"];
 $exp_laboral = $_POST["exp_laboral"];
 $titulacion = $_POST["titulacion"];
@@ -9,9 +15,14 @@ $relacion_externa = $_POST["relacion_externa"];
 $insertar ="INSERT INTO solicitud(requerimiento,exp_laboral
 ,titulacion,relacion_externa) values ('$requerimiento', '$exp_laboral','$titulacion','$relacion_externa')";
 
+
+$seleccionar = "SELECT FROM empresa(razon_social,giro,logotipo,estado,telefono,correo) values ('$razon_social,'$giro','$logotipo','$estado','$telefono','$correo')";
+
 //$consultar =" INTO egresado()"
+$resultadoa = mysqli_query($conexion1, $seleccionar);
 
 $resultado = mysqli_query($conexion1, $insertar);
+
 ?>
 
 
@@ -42,6 +53,7 @@ $resultado = mysqli_query($conexion1, $insertar);
 				<ul>
 					<li class="submenu">
 						<a href="#" ><span class="icon-user"></span>Solicitud<span class="caret icon-circle-down"></span></a>
+
 			</li>
 					<li class="submenu">
 						<a href="empresa.php" ><span class="icon-user"></span>Menu<span class="caret icon-circle-down"></span></a>
@@ -50,104 +62,72 @@ $resultado = mysqli_query($conexion1, $insertar);
 	</nav>
 	</header>
 
+		<div class="panel-body" align="center">
+	<form role="form" enctype="multipart/form-data" action="modificarsolicitud.php"class="form-horizontal" method="POST" autocomplete="off">
+		<div class="form-group">
+
 	<li>DATOS EMPRESA</li>
 	<table class="egt">
 		<tr>
 			<td><label class="control-label col-sm-4">NOMBRE: </label></td>
-			<td>
-				<div class="col-sm-6">
-					<input value class="form-control" type="text" name="r_social" required>
-				</div>
-			</td>
+			<td ><label class="control-label col-sm-4" name="razon_social"></label></td>
 		</tr>
 
 		<tr>
 			<td><label class="control-label col-sm-4">GIRO </label></td>
-			<td>
-				<div class="col-sm-6">
-					<input value class="form-control" type="text" name="r_social" required>
-				</div>
+			<td name="giro">
 			</td>
 		</tr>
 
 		<tr>
 			<td><label class="control-label col-sm-4">LOGOTIPO </label></td>
-			<td>
-				<div class="col-sm-6">
-					<input value class="form-control" type="text" name="r_social" required>
-				</div>
+			<td name="logotipo">
 			</td>
 		</tr>
 
 			<tr>
 		<td><label class="control-label col-sm-4">DOMICILIO PARTICULAR: </label></td>
-		<td>
-			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="r_social" required>
-			</div></td>
+		<td name="estado">
+		</td>
 		</tr>
 
 			<tr>
 		<td><label class="control-label col-sm-4">TELEFONO: </label></td>
-		<td>
-			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="r_social" required>
-			</div></td>
+		<td name="telefono">
 		</tr>
 
 			<tr>
 		<td><label class="control-label col-sm-4">EMAIL: </label></td>
-		<td>
-			<div class="col-sm-6">
-				<input value class="form-control" type="text" name="r_social" required>
-			</div></td>
+		<td name="correo">
+	    </td>
 		</tr>
-
 			</table>
 
 	<li>DATOS DE SOLICITUD</li>
 
-	<div class="panel-body" align="center">
-	<form role="form" enctype="multipart/form-data" class="form-horizontal" method="POST" autocomplete="off">
-		<div class="form-group">
+
 
 <table>
 
 	
 		<tr>
-			<td><label class="control-label col-sm-4">REQUERIMIENTOS </label></td>
+			<td><label class="control-label col-sm-4">REQUERIMIENTOS PROFECIONALES</label></td>
 			<td>
 				<div class="col-sm-6">
-					<textarea name="requerimiento" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
+					<textarea name="requerimiento" rows="10" cols="100"></textarea>
 				</div>
 			</td>
 		</tr>
-		<tr>
-			<td><label class="control-label col-sm-4">EXPERIENCIA LABORAL </label></td>
-			<td>
-				<div class="col-sm-6">
-					<textarea name="exp_laboral" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
-				</div>
-			</td>
-		</tr>
-
+		
 		<tr>
 			<td><label class="control-label col-sm-4">TITULACION</label></td>
 			<td>
 				<div class="col-sm-6">
-					<textarea name="titulacion" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
+					<textarea name="titulacion" rows="10" cols="100"></textarea>
 				</div>
 			</td>
 		</tr>
 
-		<tr>
-			<td><label class="control-label col-sm-4">RELACION EXTERNA </label></td>
-			<td>
-				<div class="col-sm-6">
-					<textarea name="relacion_externa" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
-				</div>
-			</td>
-		</tr>
 	</table>
 
 

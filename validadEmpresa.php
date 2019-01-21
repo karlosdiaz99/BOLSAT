@@ -3,13 +3,13 @@
 require('conexion.php');
 
 
-$nombre_acceso=$_POST["nombre_acceso"];
+$razon_social=$_POST["razon_social"];
 $clave=$_POST["clave"];
-$perfil=$_POST["perfil"];
+
 
 //conexion vinculacion
 
-$consultab="SELECT * FROM accesos WHERE perfil='empresa' and nombre_acceso='$nombre_acceso' and clave='$clave'";
+$consultab="SELECT * FROM empresa WHERE razon_social='$razon_social' and clave='$clave'";
 
 $resultadodos=mysqli_query($conexion1,$consultab);
 

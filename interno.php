@@ -8,31 +8,42 @@ $password="";
 $nombre_base="sistema_bolsat";
 $host="localhost";
 $conexion1=mysqli_connect("$host","$usuario","$password","$nombre_base");
+
+$usuario ="SELECT nombre_acceso FROM accesos ";
+
 ?>
 <!DOCTYPE HTML>
 <HTML>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-		<title>Bolsa T ITO</title>
-		<link rel="shortcut icon" href="imagenes/escudoM.png"/>
-		<link href="estilo10.css" rel="Stylesheet"/>	
-		<link href="style.css" rel="Stylesheet"/>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/micss.css">
-
+  <title>Bolsa de trabajo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <link href="estilo10.css" rel="Stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 
 <header>
-<img class="logoMex" src="imagenes/TECNACMEX.png"width="300" height="100" align="letf">	
-	<img class="logoSEP" src="imagenes/SEP.png"width="300" height="100" align="right">
-	<div class="row encabezado text-center">
-	<img class="logoIto" src="imagenes/imagenlogo.png"width="100" height="100">	
-<div class="col.lg-1 col-lg-offset-2">
-	<h3>TECNOLOGICO NACIONAL DE MEXICO</h3>
-	<h4>Intituto Tecnologico de Oaxaca</h4>
-</div>
+    <div id="sfcwhfazg5pp5cscswpm1m9uxxmsfbb5abb"></div>
+                <script type="text/javascript" src="https://counter5.wheredoyoucomefrom.ovh/private/counter.js?c=whfazg5pp5cscswpm1m9uxxmsfbb5abb&down=async" async></script><br><noscript><a href="https://www.contadorvisitasgratis.com" title="contador de entradas"><img src="https://counter5.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=whfazg5pp5cscswpm1m9uxxmsfbb5abb" border="0" title="contador de entradas" alt="contador de entradas"></a></noscript>
+
+  <div class="row">
+                <div class="col-lg-4 ">
+                <img class="logoMex" src="imagenes/TECNACMEX.png"width="250" height="100" align="letf">     
+                </div>
+                <div class="col-lg-4 text-center" >
+                  <img class="logoITO" src="imagenes/imagenlogo.png" width="100" height="100">
+                    <p class="encabezado text-center">
+                        </p><h3>Tecnológico Nacional de México </h3>
+                        <h4>Instituto Tecnológico de Oaxaca </h4>
+                    <p></p>
+                </div>
+            <div class="col-lg-4">
+                    <img class="logoSEP" src="imagenes/SEP.png"width="250" height="100">
+                </div>
+            </div>
 
 <div class="menus">
 				<a href="#" class="bt-menu"><span class="icon-list2"></span>Menu</a>
@@ -40,33 +51,13 @@ $conexion1=mysqli_connect("$host","$usuario","$password","$nombre_base");
 			<nav>
 				<ul>
 					<li class="submenu">
-						<a href="#" ><span class="icon-user"></span>Alumnos<span class="caret icon-circle-down"></span></a>
+						<a href="#" ><span class="icon-user"></span>Busqueda<span class="caret icon-circle-down"></span></a>
 						<ul class="children">
-							<li><a href="interno.php">Registar alumno</a></li>
-							<li><a href="interno.php">Eliminar alumno</a></li>
-							<li><a href="interno.php">Buscar alumno</a></li>
+							<li><a href="busqueda_egresado_interno.php">Egresados</a></li>
+							<li><a href="busqueda_empresa_interno.php">Empresas</a></li>
+
 
 						</ul>
-					</li>
-					<li class="submenu">
-						<a href="#"><span class="icon-book2"></span>Empresas<span class="caret icon-circle-down"></span></a>
-							<ul class="children">
-								<li><a href="interno.php">Registrar empresa</a></li>
-								<li><a href="interno.php">Eliminar empresa</a></li>
-								<li><a href="interno.php">Buscar empresa</a></li>
-								
-								
-							</ul>
-					</li>
-			
-					<li class="submenu">
-						<a href="#"><span class="icon-book2"></span>Documentos Externos<span class="caret icon-circle-down"></span></a>
-							<ul class="children">
-								<li><a href="interno.php">domuentos alumnos</a></li>
-								<li><a href="interno.php">documentos empresas</a></li>
-								<li><a href="interno.php">analisis semestrales</a></li>
-								<li><a href="interno.php">otros archivos</a></li>
-							</ul>
 					</li>
 
 					<li class="submenu">

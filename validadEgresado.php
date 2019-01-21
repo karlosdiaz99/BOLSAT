@@ -3,14 +3,14 @@
 require('conexion.php');
 
 
-$nombre_acceso=$_POST["nombre_acceso"];
+$nombre_egresado=$_POST["nombre_egresado"];
 $clave=$_POST["clave"];
-$perfil=$_POST["perfil"];
+
 
 //conexion vinculacion
 
 
-$consultaa="SELECT * FROM accesos WHERE perfil='egresado' and nombre_acceso='$nombre_acceso' and clave='$clave'";
+$consultaa="SELECT * FROM egresado WHERE nombre_egresado='$nombre_egresado' and clave='$clave'";
 
 $resultadouno=mysqli_query($conexion1,$consultaa);
 

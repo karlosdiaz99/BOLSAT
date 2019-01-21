@@ -1,6 +1,15 @@
-﻿body{
+﻿@import url('//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+
+.panel-primary > .panel-heading {
+    background: #D35400; color: #000000;
+    border-color: transparent;
+}
+
+
+
+body{
 	font-family: Candara;
-     background: #ff972E;
+     background: #F8C471;
 
 }
 .encabezado{
